@@ -19,7 +19,7 @@
 }
 
 body {
-    cursor: url('mallet-128.png') 0 0, auto;
+    cursor: url('assets/mallet-128.png') 0 0, auto;
 }
 
 @keyframes wiggle {
