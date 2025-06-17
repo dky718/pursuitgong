@@ -1,1 +1,2 @@
-# pursuitgong
+**Overview**
+A lightweight digital app that celebrates when a Fellow gets a job by replicating the physical act of ringing a gong. Designed for celebrations at Pursuit, the app is simple, joyful, and fast to deploy. Clicking the gong plays a sound and triggers celebratory confetti. The UI is modern, responsive, and uses Tailwind CSS for styling.
