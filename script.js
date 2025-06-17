@@ -74,4 +74,30 @@ document.addEventListener('DOMContentLoaded', () => {
     if (copyrightYear) {
         copyrightYear.textContent = new Date().getFullYear();
     }
+
+    // Sidebar menu logic
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+    const closeSidebar = document.getElementById('closeSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    function openSidebar() {
+        sidebar.classList.remove('-translate-x-full');
+        sidebar.classList.add('translate-x-0');
+        sidebarOverlay.classList.add('opacity-100', 'pointer-events-auto');
+        sidebarOverlay.classList.remove('opacity-0', 'pointer-events-none');
+    }
+    function closeSidebarMenu() {
+        sidebar.classList.add('-translate-x-full');
+        sidebar.classList.remove('translate-x-0');
+        sidebarOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+        sidebarOverlay.classList.add('opacity-0', 'pointer-events-none');
+    }
+
+    hamburger.addEventListener('click', openSidebar);
+    hamburger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') openSidebar();
+    });
+    closeSidebar.addEventListener('click', closeSidebarMenu);
+    sidebarOverlay.addEventListener('click', closeSidebarMenu);
 }); 

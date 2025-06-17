@@ -5,19 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pursuit Gong Ceremony</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        <h1>Pursuit Gong Ceremony</h1>
-        <div class="gong-container">
-            <img src="gong.png" alt="Gong" id="gong" class="gong">
+<body class="min-h-screen bg-[#4242ea] flex flex-col">
+    <!-- Hamburger Icon -->
+    <button id="hamburger" class="fixed top-6 left-6 z-50 bg-transparent border-none p-2 rounded hover:bg-white/10 focus:bg-white/10 focus:outline-none" aria-label="Open menu">
+        <!-- Heroicons Menu Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-8 h-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+        </svg>
+    </button>
+    <!-- Sidebar -->
+    <nav id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-[#212175] text-white shadow-lg -translate-x-full transition-transform duration-300 z-40 flex flex-col pt-8">
+        <button id="closeSidebar" class="absolute top-4 right-4 text-3xl text-white hover:text-[#8d8df2] focus:outline-none" aria-label="Close menu">
+            <!-- Heroicons X Mark -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <ul class="mt-16 space-y-6 px-8">
+            <li><a href="#" class="text-lg hover:text-[#8d8df2] transition">Menu Item 1</a></li>
+            <li><a href="#" class="text-lg hover:text-[#8d8df2] transition">Menu Item 2</a></li>
+            <li><a href="#" class="text-lg hover:text-[#8d8df2] transition">Menu Item 3</a></li>
+        </ul>
+    </nav>
+    <!-- Overlay -->
+    <div id="sidebarOverlay" class="fixed inset-0 bg-black/20 z-30 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <main class="flex-1 flex flex-col justify-center items-center">
+        <div class="container mx-auto flex flex-col items-center text-center">
+            <h1 class="text-[4rem] font-bold text-white">Pursuit Gong Ceremony</h1>
+            <div class="gong-container flex justify-center w-full">
+                <img src="gong.png" alt="Gong" id="gong" class="gong">
+            </div>
+            <button id="soundToggle" class="sound-toggle">Reset</button>
+            <div class="footer flex flex-col items-center justify-center mt-8">
+                <img src="pursuit-logo.png" alt="Pursuit Logo" class="pursuit-logo mx-auto block">
+                <div class="made-with-love text-center">Made with love by Pursuit<br>© <span id="copyright-year"></span></div>
+            </div>
         </div>
-        <button id="soundToggle" class="sound-toggle">Reset</button>
-        <div class="footer">
-            <img src="pursuit-logo.png" alt="Pursuit Logo" class="pursuit-logo">
-            <div class="made-with-love">Made with love by Pursuit<br>© <span id="copyright-year"></span></div>
-        </div>
-    </div>
+    </main>
     <canvas id="confetti-canvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:10;"></canvas>
     <audio id="gongSound" src="gong.mp3"></audio>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>

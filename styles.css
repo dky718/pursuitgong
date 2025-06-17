@@ -27,6 +27,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: url('mallet-128.png') 0 0, auto;
 }
 
 .container {
@@ -35,10 +36,11 @@ body {
 }
 
 h1 {
-    color: white;
-    font-size: 2.5rem;
-    margin-bottom: 6rem;
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    font-size: 4rem;
     font-weight: bold;
+    color: #fff;
+    margin-bottom: 6rem;
 }
 
 .gong-container {
@@ -46,8 +48,7 @@ h1 {
 }
 
 .gong {
-    max-width: 450px;
-    cursor: pointer;
+    max-width: 400px;
     transition: transform 0.2s ease;
 }
 
@@ -66,10 +67,10 @@ h1 {
     padding: 0.8rem 2rem;
     font-size: 0.8rem;
     border-radius: 25px;
-    cursor: pointer;
     font-weight: bold;
     margin: 1rem 0;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .sound-toggle:hover {
@@ -123,8 +124,7 @@ h1 {
 }
 
 .gong {
-    max-width: 450px;
-    cursor: pointer;
+    max-width: 400px;
     transition: transform 0.2s ease;
 }
 
@@ -134,4 +134,83 @@ h1 {
     text-align: center;
     margin-top: 0.5rem;
     opacity: 0.8;
+}
+
+.hamburger {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 1001;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+.hamburger:focus, .hamburger:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background: #212175;
+    color: #fff;
+    box-shadow: 2px 0 16px rgba(0,0,0,0.15);
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+}
+.sidebar.open {
+    transform: translateX(0);
+}
+.close-sidebar {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 2rem 1rem 0 2rem;
+    margin: 0;
+}
+.sidebar ul li {
+    margin-bottom: 1.5rem;
+}
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+.sidebar ul li a:hover {
+    color: #8d8df2;
+}
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.2);
+    z-index: 1099;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+.sidebar-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
 } 
