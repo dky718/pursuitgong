@@ -1,0 +1,137 @@
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('fonts/ProximaNova-Regular.woff2') format('woff2'),
+         url('fonts/ProximaNova-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('fonts/ProximaNova-Bold.woff2') format('woff2'),
+         url('fonts/ProximaNova-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    background-color: #4242ea;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    padding: 1.5rem 2rem 4rem 2rem;
+}
+
+h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 6rem;
+    font-weight: bold;
+}
+
+.gong-container {
+    margin: 3rem 0;
+}
+
+.gong {
+    max-width: 450px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.gong:hover {
+    transform: scale(1.03);
+}
+
+.gong:active {
+    transform: scale(0.95);
+}
+
+.sound-toggle {
+    background-color: #3434bb;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 0.8rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 1rem 0;
+    transition: background-color 0.3s ease;
+}
+
+.sound-toggle:hover {
+    background-color: #8d8df2;
+}
+
+.footer {
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
+.pursuit-logo {
+    max-width: 187.5px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .gong {
+        max-width: 300px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-2deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes slowDown {
+    0% { 
+        transform: rotate(-2deg);
+        animation-timing-function: ease-out;
+    }
+    100% { 
+        transform: rotate(0deg);
+    }
+}
+
+.gong.wiggling {
+    animation: wiggle 0.2s ease-in-out infinite;
+}
+
+.gong.slowing-down {
+    animation: slowDown 0.5s forwards;
+}
+
+.gong {
+    max-width: 450px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.made-with-love {
+    color: #fff !important;
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+} 
