@@ -14,20 +14,51 @@
     font-style: normal;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.font-proxima {
+    font-family: 'Proxima Nova', Arial, sans-serif;
 }
 
 body {
-    font-family: 'Proxima Nova', Arial, sans-serif;
-    background-color: #4242ea;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: url('mallet-128.png') 0 0, auto;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-2deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes slowDown {
+    0% { 
+        transform: rotate(-2deg);
+        animation-timing-function: ease-out;
+    }
+    100% { 
+        transform: rotate(0deg);
+    }
+}
+
+.gong.wiggling {
+    animation: wiggle 0.2s ease-in-out infinite;
+}
+
+.gong.slowing-down {
+    animation: slowDown 0.5s forwards;
+}
+
+.gong {
+    max-width: 400px;
+    transition: transform 0.2s ease;
+}
+
+.gong:hover {
+    transform: scale(1.03);
+}
+
+.gong:active {
+    transform: scale(0.95);
 }
 
 .container {
@@ -43,21 +74,15 @@ h1 {
     margin-bottom: 6rem;
 }
 
+h2 {
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+}
+
 .gong-container {
     margin: 3rem 0;
-}
-
-.gong {
-    max-width: 400px;
-    transition: transform 0.2s ease;
-}
-
-.gong:hover {
-    transform: scale(1.03);
-}
-
-.gong:active {
-    transform: scale(0.95);
 }
 
 .sound-toggle {
@@ -95,37 +120,6 @@ h1 {
     h1 {
         font-size: 2rem;
     }
-}
-
-@keyframes wiggle {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(-2deg); }
-    50% { transform: rotate(0deg); }
-    75% { transform: rotate(2deg); }
-    100% { transform: rotate(0deg); }
-}
-
-@keyframes slowDown {
-    0% { 
-        transform: rotate(-2deg);
-        animation-timing-function: ease-out;
-    }
-    100% { 
-        transform: rotate(0deg);
-    }
-}
-
-.gong.wiggling {
-    animation: wiggle 0.2s ease-in-out infinite;
-}
-
-.gong.slowing-down {
-    animation: slowDown 0.5s forwards;
-}
-
-.gong {
-    max-width: 400px;
-    transition: transform 0.2s ease;
 }
 
 .made-with-love {
